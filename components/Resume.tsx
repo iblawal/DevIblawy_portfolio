@@ -194,7 +194,7 @@ export default function Resume() {
         {/* Download Button */}
         <div className="text-center reveal-scale">
           <Link
-            href="/assets/ibrahim-lawal-cv.pdf"
+            href="/Ibrahim-cv.pdf"
             download
             className="inline-flex items-center gap-4  text-primary px-12 py-5 font-semibold text-lg shadow-1xl hover:shadow-primary-500/50 hover:-translate-y-2 transition-all group"
           >

@@ -1,5 +1,4 @@
 'use client'
-
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { useTheme } from '@/context/ThemeContext'
@@ -40,6 +39,15 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  //  smooth scroll
+  const scrollToSection = (e: any, href: string) => {
+    e.preventDefault()
+    const target = document.getElementById(href.replace('#', ''))
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }
+
   const navLinks = [
     { href: '#home', label: 'Home' },
     { href: '#about', label: 'About' },
@@ -76,6 +84,7 @@ export default function Header() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
+                    onClick={(e) => scrollToSection(e, link.href)}
                     className={`relative text-gray-700 dark:text-gray-300 font-medium text-[0.95rem] py-2 transition-colors hover:text-primary-500 ${
                       activeSection === link.href.slice(1)
                         ? 'text-primary-500'
@@ -119,9 +128,12 @@ export default function Header() {
             </a>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Button*/}
           <button
-            onClick={() => setMobileMenuOpen(true)}
+            onClick={() => {
+              setMobileMenuOpen(true)
+              document.body.style.overflow = 'hidden'
+            }}
             className="lg:hidden p-2 z-50"
             aria-label="Open menu"
           >
@@ -141,8 +153,12 @@ export default function Header() {
             Menu
           </h2>
 
+          {}
           <button
-            onClick={() => setMobileMenuOpen(false)}
+            onClick={() => {
+              setMobileMenuOpen(false)
+              document.body.style.overflow = 'unset'
+            }}
             className="w-11 h-11 rounded-full flex items-center justify-center text-gray-700 dark:text-gray-300 hover:bg-red-50 dark:hover:bg-red-900/20 hover:text-red-500 transition-all hover:rotate-90"
             aria-label="Close menu"
           >
@@ -155,7 +171,11 @@ export default function Header() {
             <Link
               key={link.href}
               href={link.href}
-              onClick={() => setMobileMenuOpen(false)}
+              onClick={(e) => {
+                setMobileMenuOpen(false)
+                document.body.style.overflow = 'unset'
+                scrollToSection(e, link.href)
+              }}
               className="block py-4 px-6 mb-2 text-gray-700 dark:text-gray-300 font-medium text-lg rounded-xl hover:bg-primary-500/10 hover:text-primary-500 hover:pl-8 transition-all relative overflow-hidden"
             >
               <span className="absolute left-0 top-0 w-1 h-full bg-primary-500 scale-y-0 hover:scale-y-100 transition-transform" />
@@ -165,10 +185,13 @@ export default function Header() {
         </nav>
       </div>
 
-      {/* Overlay */}
+         
       {mobileMenuOpen && (
         <div
-          onClick={() => setMobileMenuOpen(false)}
+          onClick={() => {
+            setMobileMenuOpen(false)
+            document.body.style.overflow = 'unset'
+          }}
           className="fixed inset-0 bg-black/30 z-40 lg:hidden"
         />
       )}
