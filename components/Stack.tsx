@@ -12,6 +12,7 @@ import {
   FaGitAlt, 
   FaNodeJs, 
   FaGithub 
+
 } from 'react-icons/fa'
 import { 
   SiJavascript, 
@@ -23,7 +24,8 @@ import {
   SiMongodb, 
   SiPostgresql, 
   SiVercel, 
-  SiNetlify, 
+  SiNetlify,
+ 
 } from 'react-icons/si'
 import { 
   MdDevices 
@@ -77,6 +79,15 @@ const frontendSkills: SkillItem[] = [
   { name: 'Figma', Icon: FaFigma, color: '#F24E1E' },
   { name: 'Git', Icon: FaGitAlt, color: '#F05032' },
 ]
+
+const mobileSkills: SkillItem[] = [
+  { name: 'React Native', Icon: FaReact, color: '#61DAFB' },
+  { name: 'TypeScript', Icon: SiTypescript, color: '#3178C6' },
+  { name: 'JavaScript', Icon: SiJavascript, color: '#F7DF1E' },
+  { name: 'NativeWind', Icon: SiTailwindcss, color: '#06B6D4' },
+  { name: 'Figma', Icon: FaFigma, color: '#F24E1E' },
+]
+
 
 const backendSkills: SkillItem[] = [
   { name: 'Node.js', Icon: FaNodeJs, color: '#339933' },
@@ -255,6 +266,17 @@ export default function Stack() {
             </span>
           </div>
           <MarqueeRow skills={frontendSkills} direction="left" speed={35} />
+
+           {/* Mobile ← ADD THIS */}
+          <div className="flex items-center gap-3 px-2 mt-6 mb-2">
+             <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center">
+                <MdDevices className="text-white text-sm" />
+             </div>
+              <span className="text-gray-700 dark:text-gray-300 font-semibold text-sm uppercase tracking-wider">
+                Mobile
+              </span>
+           </div>
+            <MarqueeRow skills={mobileSkills} direction="right" speed={30} />
 
           {/* Backend */}
           <div className="flex items-center gap-3 px-2 mt-6 mb-2">

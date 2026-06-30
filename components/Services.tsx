@@ -23,6 +23,7 @@ import {
   SiExpress
 } from 'react-icons/si'
 import { IconType } from 'react-icons'
+import { Icon } from 'lucide-react'
 
 interface ServiceItem {
   icon: IconType
@@ -41,6 +42,15 @@ const services: ServiceItem[] = [
     category: 'Frontend',
     description: 'Modern, responsive user interfaces built with React, Next.js, TypeScript, and Tailwind CSS. Fast, accessible, and SEO-optimized.',
     features: ['React & Next.js','Javascript', 'TypeScript', 'Responsive Design', 'Performance Optimization'],
+    color: '#61DAFB',
+    gradient: 'from-cyan-300 to-blue-400',
+  },
+  {
+    icon: FaReact,
+    title: 'Mobile Development',
+    category: 'Frontend',
+    description: 'Cross-platform mobile applications built with React Native, Expo SDK, and modern UI/UX design principles .',
+    features: ['React Native', 'Expo SDK', 'Mobile UI/UX Design', 'Cross-Platform Development'],
     color: '#61DAFB',
     gradient: 'from-cyan-300 to-blue-400',
   },
@@ -114,8 +124,8 @@ const techStack = [
   { Icon: SiNextdotjs, name: 'Next.js', color: '#000000' },
   { Icon: SiTypescript, name: 'TypeScript', color: '#3178C6' },
   { Icon: FaNodeJs, name: 'Node.js', color: '#339933' },
-  { name:  'Python', Icon: FaPython, color: '#3776AB'},
-  { name:  'Django', Icon: SiDjango, color: '#092E20' },
+  { Icon:  'Python', name: FaPython, color: '#3776AB'},
+  { Icon:  'Django', name: SiDjango, color: '#092E20' },
   { Icon: SiExpress, name: 'Express', color: '#000000' },
   { Icon: SiMongodb, name: 'MongoDB', color: '#47A248' },
   { Icon: SiPostgresql, name: 'PostgreSQL', color: '#336791' },
@@ -177,7 +187,7 @@ export default function Services() {
             </h4>
 
             <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed mb-6">
-              I build scalable, responsive web applications with strong frontend and backend foundations. From design implementation to database architecture, I deliver end-to-end digital solutions.
+              I build scalable, responsive web and mobile applications with strong frontend and backend foundations. From design implementation to database architecture, I deliver end-to-end digital solutions.
             </p>
 
             <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed mb-8">

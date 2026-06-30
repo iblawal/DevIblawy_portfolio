@@ -11,7 +11,9 @@ export default function Hero() {
 
   const texts = [
     'Software Developer',
-    'React & Next.js Developer',
+    'Mobile App Developer',
+    "Web Developer",
+    'Full-Stack Developer',
     'UI/UX Designer',
     ' AI Coding Agent',
     'Coding Instructor',
@@ -66,7 +68,7 @@ export default function Hero() {
             </div>
 
             <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed mb-10 max-w-xl">
-              I build clean, scalable and high-performance websites tailored for businesses, If you're looking to scale your operations and boost your digital presence, let's build something great together.
+              I build clean, scalable and high-performance web and mobile applications tailored for businesses and startups. If you're looking to scale your operations and boost your digital presence, let's build something great together.
             </p>
 
             <div className="flex flex-wrap gap-5">

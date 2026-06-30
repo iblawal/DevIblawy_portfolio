@@ -4,36 +4,47 @@ import Link from 'next/link'
 export default function Resume() {
   const certifications = [
     {
+      title: 'Mobile App Development Certification',
+      issuer: 'TechCrush',
+      date: '2026',
+      skills: ['React Native', 'Expo SDK', 'Mobile UI/UX Design'],
+      description: 'Completed a comprehensive course in mobile application development, covering React Native framework, mobile UI/UX design principles, and cross-platform app deployment.'
+    },
+    {
       title: 'Web Design Certification',
       issuer: 'GIZ German',
       date: '2025',
       skills: ['HTML', 'CSS3', 'JavaScript', 'WordPress'],
       description: 'Completed practical training in modern web design, focusing on responsive layouts, custom Web development, and WordPress site development.'
     },
-    
+    {
+      title: 'Prompt Engineering And Programming with OpenAI Certification (In Progress)',
+      issuer: 'Colombia University',
+      date: 'Expected 2026',
+      skills: ['Prompt Engineering', 'OpenAI API', 'Natural Language Processing'],
+      description: 'Ongoing a comprehensive course in prompt engineering and programming with OpenAI, covering advanced techniques for interacting with large language models.'
+    },
     {
       title: 'Soft Skills Certification',
       issuer: 'LAG UP Youth Skills',
-      skills: ['Communication','Mentorship', 'Leadership', 'Teamwork', 'Problem-Solving', 'Time Management'],
+      skills: ['Communication', 'Mentorship', 'Leadership', 'Teamwork', 'Problem-Solving', 'Time Management'],
       date: '2024',
       description: 'Professional development and workplace skills'
     },
     {
-      title: 'Frontend Development ',
+      title: 'Frontend Development',
       issuer: 'LAG UP Youth Skills',
-      skills: ['HTML', 'CSS3', ],
+      skills: ['HTML', 'CSS3'],
       date: '2025',
       description: 'Frontend development techniques'
     },
-    
     {
       title: 'Coding & Robotics Certification (In Progress)',
       issuer: 'Inkeeper Academy',
-      skills: 'HTML, CSS, JavaScript, Python, Scratch, PictoBlox Tinkercard, AI',
+      skills: ['HTML', 'CSS', 'JavaScript', 'Python', 'Scratch', 'PictoBlox', 'Tinkercad', 'AI'],
       date: 'Expected 2026',
       description: 'Focused on robotics fundamentals, Web development, STEM education, and teaching kids coding using Scratch and PictoBlox.'
     },
-    
     {
       title: 'BSc Sociology',
       issuer: 'Federal University Oye Ekiti',
@@ -63,7 +74,7 @@ export default function Resume() {
       company: 'Haven Edu Services',
       period: '2024 - Present',
       current: true,
-      description: 'Design and implement coding curricula for both physical and virtual classes. Facilitate hands-on sessions and guide learners from foundational concepts to building functional web applications.  Trained children in foundational coding using Scratch and PictoBlox, helping them build interactive games, animations, and basic robotics projects. Provide mentorship and track learner progress.'
+      description: 'Design and implement coding curricula for both physical and virtual classes. Facilitate hands-on sessions and guide learners from foundational concepts to building functional web applications. Trained children in foundational coding using Scratch and PictoBlox, helping them build interactive games, animations, and basic robotics projects. Provide mentorship and track learner progress.'
     },
     {
       role: 'Frontend Developer (Intern)',
@@ -84,6 +95,7 @@ export default function Resume() {
   return (
     <section id="resume" className="py-24 bg-gradient-to-br from-primary-50 to-white dark:from-gray-600 dark:to-gray-500 section-reveal">
       <div className="container">
+
         {/* Header */}
         <div className="text-center mb-16">
           <h3 className="text-3xl font-bold text-gray-600 dark:text-white mb-4 font-montserrat">
@@ -98,6 +110,7 @@ export default function Resume() {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8 mb-12">
+
           {/* Experience Card */}
           <div className="bg-white dark:bg-gray-500 rounded-2xl p-8 shadow-xl border border-gray-100 dark:border-gray-500 reveal-left">
             <div className="flex items-center gap-3 mb-6">
@@ -108,16 +121,15 @@ export default function Resume() {
                 Experience
               </h4>
             </div>
-            
+
             <div className="space-y-6">
               {experiences.map((exp, idx) => (
                 <div
                   key={idx}
                   className="relative pb-6 border-b border-gray-200 dark:border-gray-700 last:border-0 last:pb-0"
                 >
-                  {/* Timeline dot */}
                   <div className="absolute -left-4 top-2 w-2 h-2 rounded-full bg-primary-500"></div>
-                  
+
                   <div className="flex items-start justify-between mb-2 gap-4">
                     <div>
                       <strong className="text-lg text-primary-800 dark:text-primary-400 block">
@@ -134,12 +146,12 @@ export default function Resume() {
                       </span>
                     )}
                   </div>
-                  
+
                   <div className="text-gray-500 dark:text-gray-500 text-xs mb-3 flex items-center gap-2">
                     <i className="fas fa-calendar-alt"></i>
                     {exp.period}
                   </div>
-                  
+
                   <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
                     {exp.description}
                   </p>
@@ -158,29 +170,28 @@ export default function Resume() {
                 Education & Certifications
               </h4>
             </div>
-            
+
             <div className="space-y-6">
               {certifications.map((cert, idx) => (
                 <div
                   key={idx}
                   className="relative pb-6 border-b border-gray-200 dark:border-gray-700 last:border-0 last:pb-0"
                 >
-                  {/* Timeline dot */}
                   <div className="absolute -left-4 top-2 w-2 h-2 rounded-full bg-primary-500"></div>
-                  
+
                   <strong className="text-lg text-primary-800 dark:text-primary-400 block mb-1">
                     {cert.title}
                   </strong>
-                  
+
                   <div className="text-gray-600 dark:text-gray-400 text-sm font-medium mb-2">
                     {cert.issuer}
                   </div>
-                  
+
                   <div className="text-gray-500 dark:text-gray-500 text-xs mb-2 flex items-center gap-2">
                     <i className="fas fa-calendar-alt"></i>
                     {cert.date}
                   </div>
-                  
+
                   <p className="text-gray-700 dark:text-gray-300 text-sm">
                     {cert.description}
                   </p>
@@ -188,25 +199,36 @@ export default function Resume() {
               ))}
             </div>
           </div>
+
         </div>
 
-  
-        {/* Download Button */}
-        <div className="text-center reveal-scale">
+        {/* Buttons */}
+        <div className="reveal-scale flex flex-row items-center justify-center gap-3 flex-wrap">
+
+          {/* Download Full Resume */}
           <Link
             href="/Ibrahim-cv.pdf"
             download
-            className="inline-flex items-center gap-4  text-primary px-12 py-5 font-semibold text-lg shadow-1xl hover:shadow-primary-500/50 hover:-translate-y-2 transition-all group"
+            className="inline-flex items-center gap-2 bg-primary-500 hover:bg-primary-600 text-white px-5 py-2.5 rounded-xl text-sm font-semibold shadow-md hover:shadow-primary-500/40 hover:-translate-y-0.5 transition-all duration-200 group"
           >
-            <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center group-hover:scale-110 transition-transform">
-              <i className="fas fa-download text-xl"></i>
-            </div>
-            <div className="text-left">
-              <div className="font-bold">Download Full Resume</div>
-              <div className="text-sm text-white/90">Get the complete PDF version</div>
-            </div>
+            <i className="fas fa-download text-xs group-hover:animate-bounce"></i>
+            Download Resume
           </Link>
+
+          {/* Divider dot */}
+          <span className="w-1 h-1 rounded-full bg-gray-300 dark:bg-gray-600 hidden sm:block"></span>
+
+          {/* View Certifications */}
+          <Link
+            href="/certifications"
+            className="inline-flex items-center gap-2 bg-white dark:bg-gray-800 text-primary-600 dark:text-primary-400 border border-primary-200 dark:border-primary-800 hover:border-primary-500 dark:hover:border-primary-500 px-5 py-2.5 rounded-xl text-sm font-semibold shadow-sm hover:shadow-primary-500/20 hover:-translate-y-0.5 transition-all duration-200"
+          >
+            <i className="fas fa-certificate text-xs"></i>
+            View Certifications
+          </Link>
+
         </div>
+
       </div>
     </section>
   )
